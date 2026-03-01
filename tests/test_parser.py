@@ -3,8 +3,10 @@ Test suite for the parser module of coveragejson_converter.
 
 Verifies that:
 - CSV files are correctly parsed into WeatherObservation objects.
-- Missing required columns raise a ValueError.
 - Timestamps are correctly parsed as UTC-aware datetimes.
+- Missing required columns raise a ValueError.
+- Handle missing CSV file
+- Handle empty CSV file
 """
 
 import pytest
@@ -14,13 +16,19 @@ from src.coveragejson_converter.parser import load_weather_csv
 from src.coveragejson_converter.models import WeatherObservation
 from pathlib import Path
 
-# Sample CSV data matching the provided input
+
+# --------------------------------------------------------------------------------
+# Sample CSV data for testing
+# --------------------------------------------------------------------------------
 CSV_DATA = """time,longitude,latitude,temperature
 2026-02-16T00:00Z,-3.48,50.73,275.2
 2026-02-16T01:00Z,-3.48,50.73,275.5
 2026-02-16T02:00Z,-3.48,50.73,275.7
 """
 
+# --------------------------------------------------------------------------------
+# Test: Load CSV and parse into WeatherObservation objects
+# --------------------------------------------------------------------------------
 def test_load_weather_csv(tmp_path):
     # Create a temporary CSV file
     csv_file = tmp_path / "input_data.csv"
@@ -42,6 +50,9 @@ def test_load_weather_csv(tmp_path):
     assert first_obs.timestamp == expected_ts
     assert first_obs.temperature == 275.2
 
+# --------------------------------------------------------------------------------
+# Test: Handle missing columns 
+# --------------------------------------------------------------------------------
 def test_missing_columns(tmp_path):
     # CSV missing the 'time' column
     bad_csv = """longitude,latitude,temperature
@@ -52,3 +63,29 @@ def test_missing_columns(tmp_path):
 
     with pytest.raises(ValueError, match="CSV must contain columns"):
         load_weather_csv(str(csv_file))
+
+
+# --------------------------------------------------------------------------------
+# Test: Handle missing CSV file 
+# --------------------------------------------------------------------------------
+def test_file_not_found():
+    """
+    Ensure that load_weather_csv raises FileNotFoundError when given
+    a non-existent CSV path.
+    """
+    with pytest.raises(FileNotFoundError):
+        load_weather_csv("nonexistent_file.csv")
+
+
+# --------------------------------------------------------------------------------
+# Test: Handle empty CSV
+# --------------------------------------------------------------------------------
+def test_empty_csv(tmp_path):
+    """
+    Ensure that an empty CSV file returns an empty list of observations.
+    """
+    csv_file = tmp_path / "empty.csv"
+    csv_file.write_text("time,longitude,latitude,temperature\n")  # headers only
+
+    observations = load_weather_csv(str(csv_file))
+    assert observations == []
