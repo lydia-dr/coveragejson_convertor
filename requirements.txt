@@ -1,0 +1,40 @@
+appnope @ file:///Users/ec2-user/buildout/croot/appnope_1759953166014/work
+asttokens @ file:///Users/ec2-user/buildout/croot/asttokens_1759952360765/work
+comm @ file:///Users/ec2-user/buildout/croot/comm_1763763170912/work
+debugpy @ file:///opt/miniconda3/conda-bld/debugpy_1762421637378/work
+decorator @ file:///Users/ec2-user/buildout/croot/decorator_1759952744985/work
+executing @ file:///Users/ec2-user/buildout/croot/executing_1761950542723/work
+iniconfig @ file:///Users/ec2-user/croot/iniconfig_1767356816729/work
+ipykernel==7.2.0
+ipython @ file:///opt/miniconda3/conda-bld/ipython_1762789298765/work
+ipython_pygments_lexers @ file:///Users/ec2-user/buildout/croot/ipython_pygments_lexers_1759952775363/work
+ipywidgets @ file:///home/conda/feedstock_root/build_artifacts/ipywidgets_1762040433881/work
+jedi @ file:///Users/ec2-user/buildout/croot/jedi_1759952789032/work
+jupyter_client @ file:///Users/ec2-user/croot/jupyter_client_1768399006150/work
+jupyter_core @ file:///Users/ec2-user/buildout/croot/jupyter_core_1765380151887/work
+jupyterlab_widgets @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_jupyterlab_widgets_1762267481/work/python/jupyterlab_widgets
+matplotlib-inline @ file:///opt/miniconda3/conda-bld/matplotlib-inline_1762779167424/work
+nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1613680548246/work
+numpy==2.4.2
+packaging @ file:///opt/miniconda3/conda-bld/packaging_1761049079068/work
+pandas==3.0.1
+parso @ file:///opt/miniconda3/conda-bld/parso_1762781702477/work
+pexpect @ file:///opt/miniconda3/conda-bld/pexpect_1762535936044/work
+platformdirs @ file:///opt/miniconda3/conda-bld/platformdirs_1762356673861/work
+pluggy @ file:///Users/ec2-user/buildout/croot/pluggy_1759951538137/work
+prompt_toolkit @ file:///opt/miniconda3/conda-bld/prompt-toolkit_1761744861210/work
+psutil @ file:///opt/miniconda3/conda-bld/psutil_1761896325336/work
+ptyprocess @ file:///opt/miniconda3/conda-bld/ptyprocess_1762424170819/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl#sha256=3470be7f810474c8a2ecfcd6e02acc6aea8483ab595417fa4e336362a349933e
+pure_eval @ file:///Users/ec2-user/buildout/croot/pure_eval_1759952573602/work
+Pygments @ file:///Users/ec2-user/buildout/croot/pygments_1763762315285/work
+pytest @ file:///Users/ec2-user/croot/pytest_1769787675846/work
+python-dateutil @ file:///Users/ec2-user/buildout/croot/python-dateutil_1759952060416/work
+pyzmq @ file:///opt/miniconda3/conda-bld/pyzmq_1762375615819/work
+setuptools==80.10.2
+six @ file:///Users/ec2-user/buildout/croot/six_1759951952559/work
+stack_data @ file:///Users/ec2-user/buildout/croot/stack_data_1759953041043/work
+tornado @ file:///Users/ec2-user/buildout/croot/tornado_1768896066734/work
+traitlets @ file:///Users/ec2-user/buildout/croot/traitlets_1759951967871/work
+wcwidth @ file:///Users/ec2-user/croot/wcwidth_1767780857869/work
+wheel==0.46.3
+widgetsnbextension @ file:///home/conda/feedstock_root/build_artifacts/widgetsnbextension_1762040310212/work
